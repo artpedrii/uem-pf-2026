@@ -1,0 +1,28 @@
+#EXERCÍCIO 1: É um paradigma de programação onde os programas são descritos com sentenças que modificam o estado do programa.
+
+#EXERCÍCIO 2: Um paradigma de programação onde os programas são descritos com aplicação e composição de funções. Evita mudança de estado 
+e efeitos colaterais.
+
+#EXERCÍCIO 3: Qualquer efeito que seja observável além do valor da função.
+
+#EXERCÍCIO 4: Read, Eval, Print, Loop. Ele lê, valida, imprime o resultado e repete o ciclo.
+
+#EXERCÍCIO 5: Porque o conhecimento de várias ferramentas nos permite saber qual usar na melhor hora. Além de que o gleam tem crescido nos últimos tempos.
+ 
+#EXERCICIO 6, 7 E 8 RESOLVIDOS E TESTADOS
+
+#EXERCICIO 9: Por enquanto achei uma linguagem normal, só com uma sintaxe diferente, assim como as outras.
+
+#EXERCÍCIO 10 (EM PYTHON)
+
+n: int = 1
+def f(x: int) -> int:
+    global n 
+    n = n + 1
+    return x * n 
+
+#usei variavel global
+
+#EXERCICIO 11: O efeito colateral gera dificuldade em pensar e analisar o código localmente, apenas onde se está "mexendo".
+
+#EXERCÍCIO 12: Alto custo computacional porque seria necessário refazer toda a estruturação do programa para atualizar alguma coisa.
