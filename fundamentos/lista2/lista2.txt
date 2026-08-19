@@ -1,1 +1,40 @@
-EXERCÍCIO 1) 
+//1
+Um literal é um valor que é representado diretamente no código. Em geral, os literais são
+utilizados para criar valores de tipos primitivos.
+//2
+Uma função primitiva é uma função suportada diretamente pela linguagem de programação.
+//3
+Uma expressão consiste em
+• Um literal; ou
+• Uma função primitiva; ou
+• Um nome; ou
+• Um case; ou
+• Uma chamada de função
+//4
+• Literal → valor que o literal representa
+• Função primitiva → sequência de instruções de
+máquina associada com a função
+• Nome → valor associado com o nome no ambiente
+• Case → avalie usando a regra de avaliação do case
+• Chamada de função → avalie usando a regra de
+avaliação de chamadas de funções
+//5
+É o modelo de substituição. 
+Vai reduzindo cada vez mais até formar uma expressão simples.
+//6
+Avalie a expressão examinada
+Se o valor da expressão for True, substitua toda a expressão case pela expressão do caso True.
+Senão, substitua toda a expressão case pela expressão do caso False
+//7
+o propósito de uma definição é dar nome a objetos computacionais, sejam eles dados ou funções.
+//8
+uma função é definida como um conjunto de expressões que mapeia valores de entrada para valores de saída.
+//9
+Sim, se a função possuir efeitos colaterais ou dependência de ordem.
+//10
+Definição com autorreferência: É quando uma definição faz referência a si mesma em sua própria estrutura (por exemplo, quando a definição de uma expressão ou de uma função inclui o uso do próprio conceito que está sendo definido).
+Processo recursivo: É o processo de avaliação correspondente, onde a execução de uma operação invoca a si mesma para processar subpartes de tamanho arbitrário até atingir um caso base.
+//18
+O operador da chamada e o bloco case decidem dinamicamente entre int.add ou int.subtract dependendo de b ser maior que zero. O interpretador avalia essa condição primeiro, seleciona a função correspondente e depois aplica aos argumentos a e b
+//19
+Com a ordem aplicativa, o interpretador avalia o argumento p() antes de executar a função principal teste. Como p() é uma função recursiva que entra em loop infinito, o programa trava de imediato. Com a ordem normal, o argumento não é avaliado de início, permitindo que a função teste descarte o segundo argumento e retorne o resultado sem travar
