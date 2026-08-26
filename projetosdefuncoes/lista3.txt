@@ -1,0 +1,29 @@
+Este arquivo contém a resolução das questões teóricas da lista (1 ao 12).
+
+1 -> As etapas são: Análise, Definição de Tipos de Dados, Especificação, Implementação, Verificação e Revisão.
+
+2 -> Identificar o problema a ser resolvido.
+
+3 -> Definir quais informações terão e como elas serão representadas.
+
+4 -> Assinatura da função, propósito e exemplos.
+
+5 -> Para saber se uma especificação está adequada devemos pensar o seguinte: Um outro desenvolvedor que olhar om meu código sem ter contexto prévio nenhum
+será capaz de fazer a implementação e a verificação inicial?
+
+6 -> É a parte que define a "interface" do código. Ela contém o nome da função, os parâmetros e seus tipos e o tipo de dado que ela vai produzir.
+
+7 -> Ajudar o projetista a entender como a saída pode ser obtida a partir das entradas. Ilustrar o funcionamento para que a especificação fique mais clara. Os 
+Exemplos também pode ser usados como forma inicial de verificação e para aumentar a confiança do desenvolvedor que o código está correto.
+
+8 -> Não necessariamente. Como mencionado na última resposta, a função que passa nos testes foi verificada inicialmente, os exemplos corretos são um ótimo indicador, mas 
+ela deve passar por mais etapas de verificação para poder se afirmar que está ISENTA DE ERROS.
+
+9 -> Não. Todas as etapas de projeto são importantes e a ausência delas pode (quase sempre torna) tornar a implementação mais difícil e demorada porque você organiza ideias enquanto escreve código.
+
+10 -> Verifica o próprio teste que pode ter sido escrito errado, se não, verifica a implementação. Os dois podem estar errados ao mesmo tempo.
+
+11 -> Identificar e fazer melhorias na especificação e implementação.
+
+12 -> A análise é a parte de formação de pensamento e do plano, é a IDENTIFICAÇÃO do problema. A descrição do propósito da função serve para
+explicar o que a função faz após a identificação e determinação do plano. 
