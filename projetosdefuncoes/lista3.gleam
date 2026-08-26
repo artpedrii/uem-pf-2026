@@ -76,40 +76,4 @@ pub fn dma_para_amd_examples() {
   //corrigi
 }
 
-///EXERCÍCIO 17
-//Recebe um *valor* Float e uma *porcentagem* Float e aumenta a *porcentagem* tirada de *valor*
-//em cima do *valor* inicial.
-pub fn aumenta(valor: Float, porcentagem: Float) -> Float {
-  valor *. { 1.0 +. porcentagem /. 100.0 }
-}
-
-pub fn aumenta_examples() {
-  check.eq(aumenta(100.0, 10.0), 110.00000000000001)
-  //seria 110.0, mas o teste deu errado por conta do float
-  check.eq(aumenta(50.0, 20.0), 60.0)
-  check.eq(aumenta(200.0, 5.5), 211.0)
-}
-
-///EXERCÍCIO 18)
-/// Classifica o *nome* de acordo com o seu tamanho (comprimento de caracteres):
-///Produz "curto" se o tamanho for menor ou igual a 4.
-///Produz "médio" se o tamanho for maior que 4 e menor ou igual a 10.
-///Produz "longo" se o tamanho for maior que 10.
-pub fn tamanho_nome(nome: String) -> String {
-  //corrigi aqui
-  case string.length(nome) <= 4 {
-    True -> "curto"
-    False ->
-      case string.length(nome) <= 10 {
-        True -> "médio"
-        False -> "longo"
-      }
-  }
-}
-
-pub fn tamanho_nome_examples() {
-  check.eq(tamanho_nome("Ana"), "curto")
-  check.eq(tamanho_nome("Carlos"), "médio")
-  check.eq(tamanho_nome("Constantino"), "longo")
-}
 
