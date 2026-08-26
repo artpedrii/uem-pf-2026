@@ -25,7 +25,7 @@ pub fn isento_tarifa_examples() {
 /// Se *n* é menor que zero, então devolve a quantidade
 /// de dígitos do valor absoluto de *n*.
 pub fn quantidade_digitos(n: Int) -> Int {
-  case -1 <= n <= 1 {
+  case n >= -1 && n <= 1 {
     True -> 1
     False ->
       case n > 0 {
