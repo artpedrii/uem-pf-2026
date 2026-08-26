@@ -1,5 +1,5 @@
 ///Este arquivo contém a resolução dos exercícios da lista que envolvem código (13 ao 30).
-
+import gleam/string
 import sgleam/check
 
 ///EXCERCÍCIO 13)
@@ -40,3 +40,76 @@ pub fn quantidade_digitos_examples() {
   check.eq(quantidade_digitos(0), 1)
   check.eq(quantidade_digitos(-1519), 4)
 }
+
+///EXERCÍCIO 15)
+/// Produz True se uma pessoa com *idade* é supercentenária,
+/// isto é, tem 110 anos ou mais, False caso contrário.
+pub fn supercentenario(idade: Int) -> Bool {
+  idade >= 110
+}
+
+pub fn supercentenario_examples() {
+  check.eq(supercentenario(101), False)
+  check.eq(supercentenario(110), True)
+  //corrigi aqui
+  check.eq(supercentenario(112), True)
+}
+
+///EXERCÍCIO 16
+/// Transforma a string *data* que está no formato "dia/mes/ano"
+/// para o formato "ano/mes/dia".
+///
+/// Requer que o dia e o mês tenham dois dígitos e que
+/// o ano tenha quatro dígitos.
+pub fn dma_para_amd(data: String) -> String {
+  string.slice(data, 6, 4)
+  <> "/"
+  <> string.slice(data, 3, 2)
+  <> "/"
+  <> string.slice(data, 0, 2)
+}
+
+pub fn dma_para_amd_examples() {
+  check.eq(dma_para_amd("19/07/2023"), "2023/07/19")
+  check.eq(dma_para_amd("01/01/1980"), "1980/01/01")
+  check.eq(dma_para_amd("02/02/2002"), "2002/02/02")
+  //corrigi
+}
+
+///EXERCÍCIO 17
+//Recebe um *valor* Float e uma *porcentagem* Float e aumenta a *porcentagem* tirada de *valor*
+//em cima do *valor* inicial.
+pub fn aumenta(valor: Float, porcentagem: Float) -> Float {
+  valor *. { 1.0 +. porcentagem /. 100.0 }
+}
+
+pub fn aumenta_examples() {
+  check.eq(aumenta(100.0, 10.0), 110.00000000000001)
+  //seria 110.0, mas o teste deu errado por conta do float
+  check.eq(aumenta(50.0, 20.0), 60.0)
+  check.eq(aumenta(200.0, 5.5), 211.0)
+}
+
+///EXERCÍCIO 18)
+/// Classifica o *nome* de acordo com o seu tamanho (comprimento de caracteres):
+///Produz "curto" se o tamanho for menor ou igual a 4.
+///Produz "médio" se o tamanho for maior que 4 e menor ou igual a 10.
+///Produz "longo" se o tamanho for maior que 10.
+pub fn tamanho_nome(nome: String) -> String {
+  //corrigi aqui
+  case string.length(nome) <= 4 {
+    True -> "curto"
+    False ->
+      case string.length(nome) <= 10 {
+        True -> "médio"
+        False -> "longo"
+      }
+  }
+}
+
+pub fn tamanho_nome_examples() {
+  check.eq(tamanho_nome("Ana"), "curto")
+  check.eq(tamanho_nome("Carlos"), "médio")
+  check.eq(tamanho_nome("Constantino"), "longo")
+}
+
