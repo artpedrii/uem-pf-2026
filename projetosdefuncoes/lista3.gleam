@@ -76,4 +76,55 @@ pub fn dma_para_amd_examples() {
   //corrigi
 }
 
+//EXERCÍIO 17
+//ANÁLISE: Faça uma função que recebe um valor e uma porcentagem e aumenta a porcentagem do valor inicial em cima do próprio valor.
+//TIPOS DE DADOS: As entradas são duas: Um *valor*e uma *porcentagem*, ambas reprsentadas pelo tipo primitivo *FLoat*. O resultado a função é o cálculo realizado, representado
+//também pelo tipo primitivo *Float*
+//Especificação: Recebe *valor* e *porcentagem* e faz o seguinte cálculo: tira a *porcentagem* do *valor* e soma em cima dele mesmo, esse é o resultado.
+pub fn aumenta(valor: Float, porcentagem: Float) -> Float {
+  valor *. { 1.0 +. porcentagem /. 100.0 }
+}
 
+pub fn aumenta_examples() {
+  check.eq(aumenta(100.0, 5.0), 105.0)
+  check.eq(aumenta(150.0, 7.0), 160.5)
+}
+
+//EXERCÍCIO 18
+//ANÁLISE: Faça uma função que receba um nome e classifique-o ente curto, médio ou longo. Para um nome ser curto ele deve possuir até 4 caracteres, para ser médio deve ter de 5 a 10,
+//se tiver mais de 10 ele é longo.
+//TIPOS DE DADOS: A entrada é uma: Um nome que é representado pelo tipo primitivo *String*. A saídaé sua classificação, também representada pelo tipo primitivo *String*.
+//Especificação: Recebe um *nome* e o classifica entre curto, medio ou longo. Para um nome ser curto ele deve possuir até 4 caracteres, para ser médio deve ter de 5 a 10,
+//se tiver mais de 10 ele é longo
+pub fn tamanho_nome(nome: String) -> String {
+  case string.length(nome) <= 4 {
+    True -> "curto"
+    False ->
+      case string.length(nome) <= 10 {
+        True -> "médio"
+        False -> "longo"
+      }
+  }
+}
+
+pub fn tamanho_nome_examples() {
+  check.eq(tamanho_nome("José"), "curto")
+  check.eq(tamanho_nome("Guilherme"), "médio")
+  check.eq(tamanho_nome("JOAOCHOMANETO"), "longo")
+}
+
+//EXERCÍCIO 19)
+//ANÁLISE: Faça uma função que receba uma frase e adicione um ponto final nela se ela não termina com um.
+//TIPOS DE DADOS: A entrada será uma: Uma frase que será representada pelo tipo primitivo *String*. A saída será também uma frase com ponto final,
+//representada pelo tipo primitivo *String*
+//ESPECIFICAÇÃO: Recebe uma *frase* e adicona um ponto final nela se ela já não tiver um.
+pub fn adiciona_ponto_final(frase: String) -> String {
+  todo
+}
+
+pub fn adiciona_ponto_final_examples() {
+  check.eq(adiciona_ponto_final("Gustavo"), "Gustavo.")
+  check.eq(adiciona_ponto_final("Eu te amo Julia."), "Eu te amo Julia.")
+}
+
+//EXERCÍCIO 20
