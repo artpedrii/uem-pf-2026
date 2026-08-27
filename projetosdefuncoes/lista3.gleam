@@ -9,7 +9,6 @@ import sgleam/check
 pub fn isento_tarifa(idade: Int) -> Bool {
   idade < 18 || idade >= 65
 }
-
 pub fn isento_tarifa_examples() {
   check.eq(isento_tarifa(17), True)
   check.eq(isento_tarifa(18), False)
@@ -34,7 +33,6 @@ pub fn quantidade_digitos(n: Int) -> Int {
       }
   }
 }
-
 pub fn quantidade_digitos_examples() {
   check.eq(quantidade_digitos(123), 3)
   check.eq(quantidade_digitos(0), 1)
@@ -47,7 +45,6 @@ pub fn quantidade_digitos_examples() {
 pub fn supercentenario(idade: Int) -> Bool {
   idade >= 110
 }
-
 pub fn supercentenario_examples() {
   check.eq(supercentenario(101), False)
   check.eq(supercentenario(110), True)
@@ -68,7 +65,6 @@ pub fn dma_para_amd(data: String) -> String {
   <> "/"
   <> string.slice(data, 0, 2)
 }
-
 pub fn dma_para_amd_examples() {
   check.eq(dma_para_amd("19/07/2023"), "2023/07/19")
   check.eq(dma_para_amd("01/01/1980"), "1980/01/01")
@@ -84,7 +80,6 @@ pub fn dma_para_amd_examples() {
 pub fn aumenta(valor: Float, porcentagem: Float) -> Float {
   valor *. { 1.0 +. porcentagem /. 100.0 }
 }
-
 pub fn aumenta_examples() {
   check.eq(aumenta(100.0, 5.0), 105.0)
   check.eq(aumenta(150.0, 7.0), 160.5)
@@ -106,7 +101,6 @@ pub fn tamanho_nome(nome: String) -> String {
       }
   }
 }
-
 pub fn tamanho_nome_examples() {
   check.eq(tamanho_nome("José"), "curto")
   check.eq(tamanho_nome("Guilherme"), "médio")
@@ -119,12 +113,63 @@ pub fn tamanho_nome_examples() {
 //representada pelo tipo primitivo *String*
 //ESPECIFICAÇÃO: Recebe uma *frase* e adicona um ponto final nela se ela já não tiver um.
 pub fn adiciona_ponto_final(frase: String) -> String {
-  todo
+  case string.slice(frase, string.length(frase) - 1, 1) == "." {
+    True -> frase 
+    False -> frase <> "."
+  }
 }
-
 pub fn adiciona_ponto_final_examples() {
   check.eq(adiciona_ponto_final("Gustavo"), "Gustavo.")
   check.eq(adiciona_ponto_final("Eu te amo Julia."), "Eu te amo Julia.")
 }
 
 //EXERCÍCIO 20
+//ANÁLISE: Projete uma função que verifique se uma frase tem o caractere "-" bem no meio dela.
+//TIPOS DE DADOS: A entrada será uma: Uma frase que será representada pelo tipo primitivo *String*. O resultado será a verificação, representado 
+//pelo tipo primitivo *Bool*.
+//ESPECIFICAÇÃO: Recebe uma *frase* e verifica se seu caractere central é "-", produz *True* se for e *False* caso contrário.
+pub fn verifica_traco_meio(frase: String) -> Bool {
+  string.slice(frase, {string.length(frase) / 2}, 1) == "-"
+}
+pub fn verifica_traco_meio_examples() {
+  check.eq(verifica_traco_meio("Tu-Tu"), True)
+  check.eq(verifica_traco_meio("Tutu"), False)
+}
+
+//EXERCÍCIO 21
+//ANÁLISE: Faça uma função que receba três números e devolva o maior número dentre eles.
+//TIPOS DE DADOS: As entradas serão três números inteiros, todos representados pelo tipo primitivo *Int*. A saída será o maior número dentro desses três,
+//representado também pelo tipo primitivo *Int*.
+//ESPECIFICAÇÃO: Recebe três números *num1*, *num2* e *num3* e devolve qual é o maior dentre esses três números.
+pub fn maximo_tres_numeros(num1: Int, num2: Int, num3: Int) -> Int {
+  case num1 >= num2 && num1 >= num3 {
+    True -> num1
+    False -> case num2 >= num3 && num2 >= num1 {
+      True -> num2
+      False -> num3 
+    }
+  }
+}
+pub fn maximo_tres_numeros_examples() {
+  check.eq(maximo_tres_numeros(1, 2, 3), 3)
+  check.eq(maximo_tres_numeros(1, 3, 2), 3)
+  check.eq(maximo_tres_numeros(3, 1, 2), 3)
+}
+
+//EXERCÍCIO 22)
+//ANÁLISE: Faça uma função que receba uma frase e um número natural n e substituia os n primeiros cracteres da frase por "x".
+//TIPOS DE DADOS: As entradas serão duas: Uma frase que será representada pelo tipo primitivo *String* e um número natural que será representado
+//pelo tipo primitivo *Int*. O resultado será a frase com a substituição, representado pelo tipo primitivo *String*.
+//ESPECIFICAÇÃO: Recebe uma *frase* e um número inteiro *n*, após isso, substitui os *n* primeiros caracteres da *frase* por "x".
+pub fn substitui_por_x(frase: String, n: Int) -> String {
+  string.repeat("x", n) <> string.slice(frase, n, string.length(frase))
+}
+pub fn substitui_por_x_examples() {
+  check.eq(substitui_por_x("Arthur", 3), "xxxhur")
+  check.eq(substitui_por_x("Julia", 1), "xulia")
+}
+
+//EXERCÍCIO 23
+//ANÁLISE:
+//TIPOS DE DADOS:
+//ESPECIFICAÇÃO:
