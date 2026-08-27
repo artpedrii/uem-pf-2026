@@ -170,6 +170,11 @@ pub fn substitui_por_x_examples() {
 }
 
 //EXERCÍCIO 23
-//ANÁLISE:
-//TIPOS DE DADOS:
-//ESPECIFICAÇÃO:
+//ANÁLISE: Faça uma função que recebe uma frase e verifica se ela não possui espaços extras. Isto é, não possui espaços no começo e nem no final. 
+//TIPOS DE DADOS: A entrada será uma: Uma frase que será representada pelo tipo primitivo *String*. A saída será o resultado da verificação, representado
+//pelo tipo primitivo *Bool*.
+//ESPECIFICAÇÃO: Recebe uma frase* e verifica se ela NÃO começa ou termina com espaços. Produz *True* se não possuir espaços no começo ou ao final
+//e produz *False* caso contrário.
+pub fn sem_espacos_extras(frase: String) -> Bool {
+  todo
+}
