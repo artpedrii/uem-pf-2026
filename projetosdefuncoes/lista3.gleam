@@ -176,5 +176,16 @@ pub fn substitui_por_x_examples() {
 //ESPECIFICAÇÃO: Recebe uma frase* e verifica se ela NÃO começa ou termina com espaços. Produz *True* se não possuir espaços no começo ou ao final
 //e produz *False* caso contrário.
 pub fn sem_espacos_extras(frase: String) -> Bool {
-  todo
+  string.slice(frase, 0, 1) != " " && string.slice(frase, {string.length(frase) - 1}, 1) != " "
 }
+pub fn sem_espacos_extras_examples() {
+  check.eq(sem_espacos_extras("Julia"), True)
+  check.eq(sem_espacos_extras(" Julia"), False)
+  check.eq(sem_espacos_extras("Julia "), False)
+  check.eq(sem_espacos_extras(" Julia "), False)
+}
+
+//EXERCÍCIO 24
+//ANÁLISE:
+//TIPOS DE DADOS:
+//ESPECIFICAÇÃO:
