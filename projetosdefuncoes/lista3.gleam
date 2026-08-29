@@ -186,6 +186,49 @@ pub fn sem_espacos_extras_examples() {
 }
 
 //EXERCÍCIO 24
+//ANÁLISE: Faça uma função que receba uma renda e calcule o valor do imposto que será pagado sobre essa renda. Os casos são os seguintes:
+//Quem recebe até 1000: Paga 5% de imposto. 
+//Quem recebe de mais de 1000 até 5000: Paga 5% de imposto sobre 1000 e 10% sobre o que passar de 1000.
+//Quem recebe mais de 5000: Paga 5% sobre 1000, 10% sobre 4000 e 20% sobre o que passar de 5000. 
+//TIPOS DE DADOS: A entrada será uma: Um valor de salário que será representado pelo tipo primitivo *Float*. O resultado da 
+//função será o valor do imposto à ser pago, representado também pelo tipo primitivo *Float*.
+//ESPECIFICAÇÃO: Recebe um *salario* e calcula o imposto à ser pago à partir dele seguindo as seguintes regras: 
+//Quem recebe até 1000: Paga 5% de imposto. 
+//Quem recebe de mais de 1000 até 5000: Paga 5% de imposto sobre 1000 e 10% sobre o que passar de 1000.
+//Quem recebe mais de 5000: Paga 5% sobre 1000, 10% sobre 4000 e 20% sobre o que passar de 5000. 
+pub fn calcula_imposto(salario: Float) -> Float {
+  case salario <=. 1000.0 {
+    True -> {5.0 /. 100.0} *. salario 
+    False -> case salario >. 1000.0 && salario <=. 5000.0 {
+      True -> {{5.0 /. 100.0} *. 1000.0} +. {{10.0 /. 100.0} *. {salario -. 1000.0}}
+      False -> {{5.0 /. 100.0} *. 1000.0} +. {{10.0 /. 100.0} *. 4000.0}} +. {{20.0 /. 100.0} *. {salario -. 5000.0}}
+  } 
+}
+pub fn calcula_imposto_examples() {
+  check.eq(calcula_imposto(1000.0), 50.0)
+  check.eq(calcula_imposto(5000.0), 450.0)
+  check.eq(calcula_imposto(6000.0), 650.0)
+}
+
+//EXERCÍCIO 25
+//ANÁLISE: Faça uma função que verifique se uma palavra é duplicada. 
+//TIPOS DE DADOS: A entrada será uma: Uma palavra que será representada pelo tipo primitivo *String*. O resultado 
+//será a verificação, representado pelo tipo primitivo *Bool*.
+//ESPECIFICAÇÃO:
+pub fn eh_duplicada(palavra: String) -> Bool {
+  case string.slice(palavra, {string.length(palavra) / 2}, 1) == "-" {
+    True -> string.slice(palavra, 0, {string.length(palavra) / 2}) == string.slice(palavra, {string.length(palavra) / 2} + 1, {string.length(palavra) / 2})
+    False -> string.slice(palavra, 0, {string.length(palavra) / 2}) == string.slice(palavra, {string.length(palavra) / 2}, {string.length(palavra) - 1})
+  }
+}
+pub fn eh_duplicada_examples() {
+  check.eq(eh_duplicada("mi-mi"), True)
+  check.eq(eh_duplicada("mi-ma"), False)
+  check.eq(eh_duplicada("lerolero"), True)
+  check.eq(eh_duplicada("jujulia"), False)
+}
+
+//EXERCÍCIO 26
 //ANÁLISE:
 //TIPOS DE DADOS:
 //ESPECIFICAÇÃO:
