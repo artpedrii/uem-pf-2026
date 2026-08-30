@@ -1,6 +1,8 @@
 ///Este arquivo contém a resolução dos exercícios da lista que envolvem código (13 ao 30).
 import gleam/string
 import sgleam/check
+import gleam/float 
+import gleam/int
 
 ///EXCERCÍCIO 13)
 /// Produz True se uma pessoa com *idade* é isento da
@@ -229,6 +231,62 @@ pub fn eh_duplicada_examples() {
 }
 
 //EXERCÍCIO 26
+//ANÁLISE: Faça uma função que receba um valor de altura e um valor de comprimento de uma parede em metros e calcule quantos azulejos serão necessários
+//para azulejar a parede. Saiba quue cada azulejo é quadrado e tem 20cm de lado. Considere que o construtor nunca perde um azulejo e que os recortes
+//não são reaproveitados.
+//TIPOS DE DADOS: As entradas serão duas: A altura e a largura, ambas representadas pelo tipo primitivo *Float*. A saída será a quantidade de azulejos 
+//necessários para azulejar a parede, representada pelo tipo primitivo *Int*.
+//ESPECIFICAÇÃO: Recebe um valor de *altura* e *comprimento* de uma parede e calcula quantos azulejos 20mx20m sao necessários para azulejar a parede. 
+pub fn calcula_azulejos(altura: Float, comprimento: Float) -> Int {
+  float.round(float.ceiling({altura *. 100.0} /. 20.0) *. float.ceiling({comprimento *. 100.0} /. 20.0))
+}
+pub fn calcula_azulejos_examples() {
+  check.eq(calcula_azulejos(4.0, 5.0), 500)
+  check.eq(calcula_azulejos(6.0, 2.0), 300)
+}
+
+//EXERCÍCIO 27
+//ANÁLISE: Faça uma função que receba um texto e um número natural n e rotacione o texto n posições à direita. Um texto é rotacionado quando as últimas
+//n caracteres do texto vao para as n primeiras posições.
+//TIPOS DE DADOS: As entradas serão duas: Um texto que será representado pelo tipo primitivo *String* e um número n que será representado pelo tipo primitivo *Int*.
+//A saída será a string rotacionada representada pelo tipo primitivo *String*.
+//ESPECIFICAÇÃO:
+pub fn rotaciona_direita(texto: String,  n: Int) -> String {
+  string.slice(texto, {string.length(texto) - n}, n) <> string.slice(texto, 0, {string.length(texto) - n})
+}
+pub fn rotaciona_direita_examples() {
+  check.eq(rotaciona_direita("marcelio", 5), "celiomar")
+}
+
+//EXERCÍCIO 28
+//ANÁLISE: Faça uma função que receba um numero de telefone no formato "(XX)XXXXX-XXXX" e adicione o nono dígito nele caso ele não o possua.
+//TIPOS DE DADOS: A entrada será uma: Um número de telefone que será representado pelo tipo primitivo *String*. A saída será o número com o nono dígito, representado
+//pelo tipo primitivo *String*.
+//ESPECIFICAÇÃO: Recebe um *numero* no formato "(XX)XXXXX-XXXX" e adiciona o nono dígito nele caso ele não o possua.
+pub fn adiciona_nono_digito(numero: String) -> String {
+  case string.length(numero) == 14 {
+    True -> numero
+    False -> string.slice(numero, 0, 4) <> "9" <> string.slice(numero, 4, 9) 
+  }
+}
+pub fn adiciona_nono_digito_examples() {
+  check.eq(adiciona_nono_digito("(44)9999-9999"), "(44)99999-9999")
+  check.eq(adiciona_nono_digito("(44)99999-9999"), "(44)99999-9999")
+}
+
+//EXERCÍCIO 29
+//ANÁLISE:
+//TIPOS DE DADOS:
+//ESPECIFIAÇÃO:
+pub fn letreiro(texto: String, largura: Int, momento: Int) -> String {
+  string.slice(texto, momento % string.length(texto), largura)
+}
+
+//EXERCÍCIO 30
 //ANÁLISE:
 //TIPOS DE DADOS:
 //ESPECIFICAÇÃO:
+pub fn eh_palindromo(n: Int) -> Bool {
+  let s = int.to_string(n)
+  s == string.reverse(s)
+}
