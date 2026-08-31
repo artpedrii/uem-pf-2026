@@ -275,18 +275,30 @@ pub fn adiciona_nono_digito_examples() {
 }
 
 //EXERCÍCIO 29
-//ANÁLISE:
-//TIPOS DE DADOS:
-//ESPECIFIAÇÃO:
-pub fn letreiro(texto: String, largura: Int, momento: Int) -> String {
-  string.slice(texto, momento % string.length(texto), largura)
+//ANÁLISE: Faça uma função que receba uma frase à ser exibida em um letreiro, o tamanho máximo de caracteres que esse letreiro pode exibir e um momento
+//específico. A função deve mostrar qual a exibição atual do letreiro naquele exato momento. A frase sempre é maior que a capacidade do letreiro.
+//TIPOS DE DADOS: As entradas serão três: Uma frase que será representada pelo tipo primitivo *String*, o número máximo de caracteres que o letreiro pode exibir que será
+//representado pelo tipo primitivo *Int* e o momento da exibição que será representado pelo tipo primitivo *Int*.  
+//ESPECIFIAÇÃO: Recebe um *texto*, um *tamanho* e um *momento* da exibição e mostra qual parte do *texto* estará sendo exibida no momento.
+pub fn letreiro(texto: String, tamanho: Int, momento: Int) -> String {
+  string.slice(texto, momento % string.length(texto), tamanho)
+}
+pub fn letreiro_examples () {
+  check.eq(letreiro("Promoção de sorvetes, pague 2 leve 3!", 20, 17), "tes, pague 2 leve 3!")
 }
 
 //EXERCÍCIO 30
-//ANÁLISE:
-//TIPOS DE DADOS:
-//ESPECIFICAÇÃO:
+//ANÁLISE: Faça uma função que verifique se determinado número é palíndromo. Um número é palíndro se for igual sendo lido da esquerda para direita ou
+//da direita para à esquerda.
+//TIPOS DE DADOS: A entrada será uma: Um número natural *n* que será representado pelo tipo primitivo *Int*, o resultado é a verifiação se ele 
+//é palíndromo ou não, representado pelo tipo primitivo *Bool*.
+//ESPECIFICAÇÃO: Recebe um número *n* e verifica se ele é palíndromo. Um número é palíndromo se for igual sendo lido de ambas as direções.
+//Produz *True* se for palíndromo e *False* caso contrário.
 pub fn eh_palindromo(n: Int) -> Bool {
   let s = int.to_string(n)
   s == string.reverse(s)
+}
+pub fn eh_palindromo_examples () {
+  check.eq(eh_palindromo(4114), True)
+  check.eq(eh_palindromo(4321), False)
 }
