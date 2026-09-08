@@ -1,19 +1,19 @@
 Este arquivo contém as respostas dos exercícios teóricos da lista de Tipos de Dados (1 ao 9).
 
-1 -> 
+1 -> Um tipo de dado é um conjunto de valores que uma variável pode assumir.
 
-2 ->
+2 -> Identificar as informações e definir como elas serão representadas no programa. 
 
-3 ->
+3 -> Fazer com que todos os valores válidos sejam representáveis e todos os valores inválidos irrepresentáveis.
 
-4 ->
+4 -> Quando a informação consiste de dois ou mais itens que juntos descrevem uma entidade.
 
-5 ->
+5 -> Fazemos uma nova estrutura "copiando" o valor da estrutura original acessando o valor e escrevendo o novo valor no campo que se deseja mudar.
 
-6 ->
+6 -> Quando todos os valores válidos para o tipo podem ser nomeados.
 
-7 ->
+7 -> Um tipo algébrico de dado é a combinação do tipo produto (estruturas) e do tipo soma (uniões).
 
-8 ->
+8 -> Devemos garantir que nenhum caso fique de fora.
 
-9 ->
+9 -> Utilizamos uniões quando precisamos representar informações que podem assumir alternativas mutuamente exclusivas.
