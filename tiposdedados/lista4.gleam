@@ -132,6 +132,9 @@ pub type Resolucao {
   Resolucao(largura: Int, altura: Int)
 }
 //item a)
+//ANÁLISE: 
+//TIPOS DE DADOS:
+//ESPECIFICAÇÃO:
 //item b)
 //item c)
 
