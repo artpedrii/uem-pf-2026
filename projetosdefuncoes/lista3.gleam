@@ -279,9 +279,6 @@ pub fn calcula_azulejos_examples(string.slice(texto, { string.length(texto) - n 
   check.eq(calcula_azulejos(6.0, 2.0), 300)
 }
 
-//EXERCÍCIO 23
-//ANÁLISE: Faça uma função que recebe uma frase e verifica se ela não possui espaços extras. Isto é, não possui espaços no começo e nem no final. 
-//TIPOS DE DADOS: A entrada será uma: U
 
 //EXERCÍCIO 27
 //ANÁLISE: Faça uma função que receba um texto e um número natural n e rotacione o texto n posições à direita. Um texto é rotacionado quando as últimas
@@ -328,8 +325,7 @@ pub fn letreiro(texto: String, tamanho: Int, momento: Int) -> String {
 pub fn letreiro_examples() {
   check.eq(
     letreiro("Promoção de sorvetes, pague 2 leve 3!", 20, 17),
-    "tes, pague 2 leve 3!",
-  )
+    "tes, pague 2 leve 3!")
 }
 
 //EXERCÍCIO 30
