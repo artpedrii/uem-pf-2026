@@ -180,5 +180,50 @@ pub fn pode_exibir_sem_distorcao_examples() {
 }
 
 //EXERCÍCIO 13)// (UNIÕES)
+pub type Figura {
+  //Representa duas figuras geométricas: retângulo e círculo. O retângulo é representado por sua largura e altura, enquanto o círculo é representado por seu raio.
+  Retangulo(largura: Float, altura: Float)
+  Circulo(raio: Float)
+}
 //item a)
+//ANÁLISE: Faça uma função que calcule a área de uma figura geométrica. Para isso, basta aplicar as fórmulas matemáticas conhecidas para cada tipo de figura.
+//TIPOS DE DADOS: A entrada será uma figura geométrica representada pela união *Figura*. A saída será a área da figura, representada pelo tipo primitivo *Float*.
+//ESPECIFICAÇÃO: Recebe uma figura geométrica *figura* e devolve a área da figura.
+pub fn area(figura: Figura) -> Float {
+  case figura {
+    Retangulo(largura, altura) -> largura *. altura 
+    Circulo(raio) -> 3.14159 *. raio *. raio
+  }
+}
+pub fn area_examples() {
+  check.eq(area(Retangulo(5.0, 10.0)), 50.0)
+  check.eq(area(Circulo(3.0)), 28.274309999999996)      
+}
 //item b)
+//ANÁLISE: Faça uma função que verifique se uma figura cabe dentro de outra figura. Para isso, basta comparar as dimensões das duas figuras e verificar se a primeira figura é menor ou igual à segunda.
+//TIPOS DE DADOS: As entradas serão duas figuras geométricas representadas pela união *Figura*. A saída será um valor booleano.
+//ESPECIFICAÇÃO: Recebe duas figuras geométricas *figura1* e *figura2* e devolve True se a primeira figura cabe dentro da segunda, ou False caso contrário.
+pub fn cabe_dentro(figura1: Figura, figura2: Figura) -> Bool {
+  case figura1 {
+    Retangulo(largura1, altura1) ->
+      case figura2 {
+        Retangulo(largura2, altura2) -> largura1 <=. largura2 && altura1 <=. altura2
+        Circulo(raio2) -> largura1 <=. 2.0 *. raio2 && altura1 <=. 2.0 *. raio2
+      }
+    Circulo(raio1) ->
+      case figura2 {
+        Retangulo(largura2, altura2) -> 2.0 *. raio1 <=. largura2 && 2.0 *. raio1 <=. altura2
+        Circulo(raio2) -> raio1 <=. raio2
+      }
+  }
+}
+pub fn cabe_dentro_examples() {
+  check.eq(cabe_dentro(Retangulo(5.0, 10.0), Retangulo(10.0, 20.0)), True)
+  check.eq(cabe_dentro(Retangulo(5.0, 10.0), Circulo(7.0)), True)
+  check.eq(cabe_dentro(Circulo(5.0), Retangulo(10.0, 20.0)), True)
+  check.eq(cabe_dentro(Circulo(5.0), Circulo(7.0)), True)
+  check.eq(cabe_dentro(Retangulo(10.0, 20.0), Retangulo(5.0, 10.0)), False)
+  check.eq(cabe_dentro(Retangulo(10.0, 20.0), Circulo(7.0)), False)
+  check.eq(cabe_dentro(Circulo(10.0), Retangulo(5.0, 10.0)), False)
+  check.eq(cabe_dentro(Circulo(10.0), Circulo(7.0)), False)
+}
