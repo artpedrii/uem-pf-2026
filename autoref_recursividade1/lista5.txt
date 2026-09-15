@@ -1,11 +1,21 @@
 Este arquivo contém as respostas das questões teóricas da lista 5 (Autorreferência e recursividade I) (1 à 5).
 
-1 -> 
+1 -> É aqeuele que é definido em formas de si mesmo de forma direta ou indireta.
 
-2 ->
+2 -> Para ser bem formada, uma definição com autorreferência deve ter: Pelo menos um caso base, pelo menos um caso com autorreferência.
 
-3 -> 
+3 -> Quando queremos representar dados de tamanhos arbitrários.
 
-4 -> 
+4 -> É aquela que chama a si mesma de forma direta ou indireta.
 
-5 ->
+5 -> O modelo de função para o tipo lista é da seguinte forma: 
+pub fn fn_para_lista(lst: Lista) {
+    case lst {
+        Vazia -> todo
+        NaoVazia(primeiro, resto) -> {
+            todo 
+            primeiro
+            fn_para_lista(resto) 
+        }
+    }
+}
