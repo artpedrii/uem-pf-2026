@@ -54,6 +54,47 @@ pub fn converte_para_string_examples () {
 }
 
 //EXERCÍCIO 9)
+//ANÁLISE: Faça uma função que receba uma lista de strings e crie uma nova lista removendo as strings vazias da lista original.
+//TIPOS DE DADOS:A entrada será uma: Uma lista de strings que será um tipo de autorreferência contendo o tipo primitivo *String*, uma *List(String)*.
+//A saída será uma lista com os elementos vazios removidos da lista de entrada, representada também pelo tipo com autorreferência contendo o tipo primitivo *String*.
+//Uma *List(String)*.
+//ESPECIFICAÇÃO: Recebe uma lista de strings *lst* e cria uma nova lista removendo suas strings vazias.
+pub fn remove_string_vazia(lst: List(String)) -> List(String) {
+    case lst {
+        [] -> []
+        [primeiro, ..resto] -> case primeiro != "" {
+            True -> [primeiro, ..remove_string_vazia(resto)]
+            False -> remove_string_vazia(resto) 
+        }
+    }
+}
+pub fn remove_string_vazia_examples() {
+    check.eq(remove_string_vazia(["Julia", "","linda"]), ["Julia", "linda"])
+    check.eq(remove_string_vazia(["VKS ", "Tutu"]), ["VKS ", "Tutu"])
+}
+
+//EXERCÍCIO 10)
+//ANÁLISE: Faça uma função que recebe uma lista de booleanos e verifique se todos eles são verdadeiros.
+//TIPOS DE DADOS: A entrada será uma: Uma lista de booleanos que será representada por um tipo de autorreferência contendo o tipo primitivo *Bool*, uma *List(Bool).
+//A saída será o resultado dessa verificação, representada pelo tipo primitivo *Bool*.
+//ESPECIFICAÇÃO: Recebe uma lista de booleanos *lst* e verifica se todos os elementos são verdadeiros. Produz *True* se todos forem verdadeiros e
+//*False* caso contrário.
+pub fn todos_verdadeiros(lst: List(Bool)) -> Bool {
+    case lst {
+        [] -> True  
+        [primeiro, ..resto] -> case primeiro == True {
+            True -> todos_verdadeiros(resto)
+            False -> False
+        }
+    }
+}
+pub fn todos_verdadeiros_examples() {
+    check.eq(todos_verdadeiros([True, True, True]), True)
+    check.eq(todos_verdadeiros([True, True, False]), False)
+    check.eq(todos_verdadeiros([]), True) 
+}
+
+//EXERCÍCIO 11)
 //ANÁLISE:
 //TIPOS DE DADOS:
 //ESPECIFICAÇÃO: 
