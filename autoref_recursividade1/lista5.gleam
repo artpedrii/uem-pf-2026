@@ -95,6 +95,60 @@ pub fn todos_verdadeiros_examples() {
 }
 
 //EXERCÍCIO 11)
+//ANÁLISE: Faça uma função que receba uma lista de números e verifique se ela está em ordem não-decrescente.
+//TIPOS DE DADOS: A entrada será uma: Um tipo com autorreferência contendo o tipo primitivo *Int*, uma *List(Int)*. 
+//A saída será o resultado dessa verificação, que será representada pelo tipo primtivo *Bool*.
+//ESPECIFICAÇÃO: Recebe uma lista de números *lst* e verifica se ela está em ordem não-decrescente. Produz *True* se estiver
+//e produz *False* caso contrário.
+pub fn eh_nao_decrescente (lst: List(Int)) -> Bool {
+    case lst {
+        [] -> True
+        [_] -> True 
+        [primeiro, segundo, ..resto] -> case primeiro <= segundo {
+            True -> eh_nao_decrescente([segundo, ..resto])
+            False -> False 
+        }
+    }
+}
+pub fn eh_nao_decrescente_examples () {
+    check.eq(eh_nao_decrescente([1, 2, 3, 4, 5, 6]), True)
+    check.eq(eh_nao_decrescente([1, 2, 3, 2, 4, 3, 2, 1]), False)
+    check.eq(eh_nao_decrescente([]), True)
+    check.eq(eh_nao_decrescente([0]), True)
+}
+
+//EXERCÍCIO 12
+//ANÁLISE: Faça uma função que recebe uma lista de elementos e que retorne uma lista com os mesmoe elementos, porém em ordem contrária.
+//TIPOS DE DADOS: A entrada será um tipo com autorreferência contendo algo genérico, representado por *List(a)*. A saída
+//será também um tipo com autorreferência contendo algo genérico, representado também por *List(a)*
+//ESPECIFICAÇÃO: Recebe uma lista contendo qualquer tipo de elemento *lst* e retorna outra lista com os mesmos elementos em ordem contrária.
+pub fn inverte_lista(lst: List(a)) -> List(a) {
+    case lst {
+        [] -> []
+        [primeiro, ..resto] -> adiciona_ao_final(inverte_lista(resto), primeiro)
+    }
+}
+pub fn inverte_lista_examples() {
+    check.eq(inverte_lista([True, True, True, True, True, True, False]), [False, True, True, True, True, True, True])
+    check.eq(inverte_lista([0]), [0])
+    check.eq(inverte_lista([]), [])
+}
+//FUNC. AUXILIAR DO EXERCÍCIO 12
+//ANÁLISE: Faça uma função que recebe uma lista genérica e um elemento genérico (de mesmo tipo) e coloque esse elemento ao final da lista.
+//TIPOS DE DADOS: A entrada será um tipo com autorreferência contendo algo genérico, representado por *List(a)*. A saída
+//será também um tipo com autorreferência contendo algo genérico, representado também por *List(a)* 
+//ESPECIFICAÇÃO: Recebe uma lista *lst* e um elemento *elem* e adiciona o elemento ao final da lista.
+pub fn adiciona_ao_final(lst: List(a), elem: a) -> List(a) {
+    case lst {
+        [] -> [elem]
+        [primeiro, ..resto] -> [primeiro, ..adiciona_ao_final(resto, elem)]
+    }
+}
+pub fn adiciona_ao_final_examples () {
+    check.eq(adiciona_ao_final([True, True, True, True, True, True], False), [True, True, True, True, True, True, False])
+}
+
+//EXERCÍCIO 13
 //ANÁLISE:
 //TIPOS DE DADOS:
-//ESPECIFICAÇÃO: 
+//ESPECIFICAÇÃO:
