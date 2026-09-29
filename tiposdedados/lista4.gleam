@@ -48,7 +48,6 @@ pub fn direcao_90_graus_horario_examples() {
   check.eq(direcao_90_graus_horario(Leste), Sul)
   check.eq(direcao_90_graus_horario(Oeste), Norte)
 }
-
 //item c)
 //ANÁLISE: Faça uma função que receba uma direção e indique qual direção está a noventa graus no sentido anti-horário da direção inicialmente dada.
 //TIPOS DE DADOS: A entrada será uma: Uma direção que será representada pelo tipo enumerado *Direcao*. A saída será a direção que está a 90 graus
@@ -119,6 +118,9 @@ pub fn quantidade_graus_horario_examples() {
   check.eq(quantidade_graus_horario(Oeste, Sul), 270)
   check.eq(quantidade_graus_horario(Oeste, Leste), 180)
 }
+
+//EXERCÍCIO 11)
+
 //EXERCÍCIO 12)// (ESTRUTURAS)
 pub type Resolucao {
   // Altura e largura de uma resolução de tela em pixels.
@@ -227,3 +229,5 @@ pub fn cabe_dentro_examples() {
   check.eq(cabe_dentro(Circulo(10.0), Retangulo(5.0, 10.0)), False)
   check.eq(cabe_dentro(Circulo(10.0), Circulo(7.0)), False)
 }
+
+//EXERCÍCIO 14)
