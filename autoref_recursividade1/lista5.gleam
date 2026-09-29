@@ -148,7 +148,7 @@ pub fn adiciona_ao_final_examples () {
     check.eq(adiciona_ao_final([True, True, True, True, True, True], False), [True, True, True, True, True, True, False])
 }
 
-//EXERCÍCIO 13
+//EXERCÍCIO 13)
 //TIPOS DE DADOS:
 pub type Associacao {
     //Associação chave-valor.
@@ -175,3 +175,5 @@ pub fn atualiza_examples() {
     check.eq(atualiza([Associacao("A", 10), Associacao("B", 20)], "A", 30), [Associacao("A", 30), Associacao("B", 20)])
     check.eq(atualiza([Associacao("A", 10)], "J", 67), [Associacao("A", 10), Associacao("J", 67)])
 }
+
+//EXERCÍCIO 14)
