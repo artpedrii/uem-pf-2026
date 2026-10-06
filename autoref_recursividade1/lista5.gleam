@@ -177,3 +177,6 @@ pub fn atualiza_examples() {
 }
 
 //EXERCÍCIO 14)
+//ANÁLISE:
+//TIPOS DE DADOS:
+//ESPECIFICAÇÃO:
