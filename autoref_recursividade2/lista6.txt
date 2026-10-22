@@ -1,13 +1,25 @@
 Este arquivo contém as respostas das questões teóricas da lista (1 a 6).
 
-1 -> 
+1 -> Quando a iteração deve ser feita baseada no valor do número.
 
-2 ->
+2 -> fn fn_para_natural (n: int) {
+    case n {
+        _ if n < 0 -> todo 
+        0 -> todo
+        _ -> {
+            todo
+            n
+            fn_para_natural(n - 1)
+        }
+    }
+}
 
-3 ->
+3 -> A recursão estrutural é aquela feita na decomposição natural do dado (para as partes que 
+são autorreferências na definição do dado).
 
-4 ->
+4 -> Quando o problema não aborda uma solução expressa em termos da solução do subproblema estrutural.
 
-5 ->
+5 -> Alterar o problema e utilizar recursão estrutural; Usar recursão generativa; Usar um plano (Sequência de etapas).
 
-6 ->
+6 -> Funções recursivas que operam em subproblemas arbitrários (não estrutural) são chamadas de funções 
+recursivas generativas.
