@@ -44,14 +44,39 @@ pub fn potenciacao_examples () {
 }
 
 //EXERCÍCIO 9)
-//ANÁLISE:
-//TIPOS DE DADOS:
-//ESPECIFICAÇÃO:
+//ANÁLISE: Faça uma função que recebe um número natural n e retorna o produto de todos os 
+//números de 1 até n.
+//TIPOS DE DADOS: A entrada será uma: Um número natural representado pelo tipo primitivo *Int*.
+//A saída será o resultado do cálculo, também representado pelo tipo primitivo *Int*.
+//ESPECIFICAÇÃO: Recebe umm número natural *n* e calcula uma multiplicação de 1 até n.
+pub fn multiplica_ate_n (n: Int) -> Int {
+    case n <= 0 {
+        True -> 0
+        False -> case n == 1 {
+            True -> 1
+            False -> n * multiplica_ate_n(n - 1)
+        }
+    }
+}
+pub fn multiplica_ate_n_examples () {
+    check.eq(multiplica_ate_n(0), 0)
+    check.eq(multiplica_ate_n(1), 1)
+    check.eq(multiplica_ate_n(4), 24)
+}
 
 //EXERCÍCIO 10)
-//ANÁLISE:
-//TIPOS DE DADOS:
-//ESPECIFICÇÃO:
+pub fn par(n: Int) -> Bool {
+  case n {
+    0 -> True
+    _ -> impar(n - 1)
+  }
+}
+pub fn impar(n: Int) -> Bool {
+  case n {
+    0 -> False
+    _ -> par(n - 1)
+  }
+}
 
 //EXERCÍCIO 11
 //AUXILIARES
@@ -566,7 +591,7 @@ pub fn recebe_laurea(notas: List(Float)) -> Bool {
   }
 }
 pub fn recebe_laurea_examples() {
-  check.eq(recebe_laurea([9.5, 9.2, 8.0]), True) // 2 de 3 (66.6% não é > 2/3, empate, então False dependendo da precisão, mas 2/3 de 3 é 2. Tem que ser MAIOR que 2/3? O enunciado diz "mais do que 2/3". Se for estrito, 2 não é maior que 2. Vamos testar com 3 de 4).
+  check.eq(recebe_laurea([9.5, 9.2, 8.0]), False) // 2 de 3 (66.6% não é > 2/3, empate, então False dependendo da precisão, mas 2/3 de 3 é 2. Tem que ser MAIOR que 2/3? O enunciado diz "mais do que 2/3". Se for estrito, 2 não é maior que 2. Vamos testar com 3 de 4).
   check.eq(recebe_laurea([9.5, 9.1, 9.8, 8.0]), True) // 3 de 4 = 75% > 66.6%
   check.eq(recebe_laurea([7.0, 8.0, 9.5]), False)
 }
