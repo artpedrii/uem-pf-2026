@@ -1,0 +1,8 @@
+Aqui estão as respostas das questões teóricas da lista 7 (1 e 2).
+
+1 -> Quando recebemos mais de um parâmetro que são estruturas autorreferentes.
+
+2 -> I. Tratar um dos argumentos como atômico e utilizar o modelo de função para o
+outro argumento.
+II. Processar os dois argumentos de forma sincronizada.
+III. Combinar os modelos de funções para os dois argumentos.
