@@ -1,0 +1,35 @@
+1- Entidade de Primeira Classe: Dizer que uma função é de primeira classe significa que ela possui as mesmas capacidades e liberdades que qualquer outro tipo de dado (como números ou textos). Ela pode ser usada em qualquer lugar no código, pode ser criada, passada como argumento, devolvida como resultado e tipada da mesma maneira que os valores tradicionais.
+
+
+
+2- Função de Alta Ordem: É uma função que trabalha com outras funções. Para ser considerada de alta ordem, ela precisa receber pelo menos uma função como parâmetro de entrada, ou então retornar uma função como seu resultado final (ou ambas as coisas).
+
+
+
+3- Uso de map, filter e foldr: Essas funções são ideais quando precisamos processar uma lista de ponta a ponta.
+
+- O map é usado para transformar os dados, aplicando uma operação individualmente em cada item da lista.
+
+- O filter serve para filtragem, selecionando apenas os itens que atendem a uma condição (predicado) específica.
+
+- O foldr (ou fold/reduz) é usado quando precisamos acumular os elementos passo a passo (de forma incremental) para chegar a um resultado final único.
+
+
+
+4- Estratégia de Projeto de Funções: Para criar funções que recebem outras funções como parâmetro, a técnica consiste em analisar funções que tenham códigos muito parecidos, identificar exatamente as partes que mudam entre elas e, então, abstrair essas diferenças transformando-as em parâmetros.
+
+
+
+5- Variável Livre: Uma variável livre é aquela que está sendo usada dentro do bloco de uma função, mas não foi definida ali. Ou seja, ela não é um parâmetro recebido pela função, não foi criada localmente dentro dela e também não é uma variável global do programa.
+
+
+
+6- Fechamento (Closure): Um fechamento ocorre quando uma função "guarda na memória" o ambiente ao seu redor. É a junção da própria função com as variáveis livres (o ambiente léxico) que estavam disponíveis no momento em que ela foi criada.
+
+
+
+7- Uso de Funções Anônimas: O uso de funções anônimas (sem nome) é recomendado em dois cenários principais: quando a função é pequena e será usada apenas rapidamente como parâmetro (evitando criar um nome desnecessário no código), ou quando precisamos que uma função seja produzida e retornada por outra função.
+
+
+
+8- Uso Comum para Produção de Funções: A produção de funções é muito utilizada para criar novas versões de uma função original deixando alguns de seus parâmetros fixos (conhecido como parametrização de criação), ou para realizar a composição matemática de múltiplas funções.

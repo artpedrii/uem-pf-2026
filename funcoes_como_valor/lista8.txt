@@ -1,4 +1,4 @@
-Este arquivo contém a resolução dos exercícios teóricos da lista 8 (1 ao 9).
+Este arquivo contém a resolução dos exercícios teóricos da lista 8 (1 ao 8).
 
 1 -> 
 
