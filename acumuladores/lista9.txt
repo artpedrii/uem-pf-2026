@@ -1,0 +1,20 @@
+Este arquivo contém as respostas dos exercícios teóricos da lista 9 (acumuladores) (1 a 5).
+
+1 -> Um acumulador é um parâmetro extra adicionado a uma função para ir armazenando e "carregando" o resultado parcial do cálculo a cada passo da recursão.
+
+2 -> Processo recursivo: Processo de operações adiadas "cresce e diminui" de acordo com o tamanho da entrada na memória.
+    Processo iterativo: Processo onde a memória não depende da entrada. Todo o espaço é o mesmo de acordo com o acumulador.
+
+3 -> Uma função é dita recursiva em cauda quando todas as suas chamadas recursivas acontecem como a última operação a ser realizada no corpo da função. Ou seja, não há nenhuma conta ou processamento pendente aguardando o retorno da chamada recursiva.
+
+4 -> A recursão em cauda é a forma de gerar processos iterativos em linguagens de programação funcional. Os compiladores usam uma técnica chamada eliminação da chamada em cauda (Tail Call Optimization - TCO), reutilizando o mesmo quadro de pilha na memória, o que torna a recursão tão eficiente quanto um laço (while/for) de uma linguagem imperativa.
+
+5 -> I. Existe algum benefício em utilizar acumulador (ex: melhoria de desempenho ou memória)
+
+II. Qual é o significado do acumulador (o que ele representa exatamente)?
+
+III. Qual é o valor inicial do acumulador?
+
+IV. Como atualizar o acumulador a cada passo?
+
+V. Qual é a resposta final da função (como ela é obtida a partir do acumulador)?
